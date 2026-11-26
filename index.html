@@ -119,6 +119,12 @@ header{position:fixed;top:0;left:0;width:100%;height:82px;background:rgba(255,25
 .kpi span{text-align:left}
 .src{margin-top:18px;color:var(--text);font-size:15px;font-weight:300;line-height:1.7}
 
+/* VIDEOS */
+.videos{display:grid;grid-template-columns:repeat(2,1fr);gap:25px;align-items:start}
+.vid{background:#000;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(19,70,110,.12)}
+.vid video{display:block;width:100%;max-height:80vh;background:#000}
+@media(max-width:850px){.videos{grid-template-columns:1fr}}
+
 /* FOOTER */
 footer{background:var(--deep);color:#fff;text-align:center;padding:35px 20px}
 footer span{color:#8cc8f5}
@@ -339,15 +345,19 @@ footer span{color:#8cc8f5}
     <div class="back" onclick="showPage('home')">← กลับหน้าหลัก</div>
     <h1 class="title">เล่าให้เห็นภาพ ก่อนคุณตัดสินใจ</h1>
     <div class="subtitle g"><b>07</b>CONTENT &amp; MESSAGE</div>
-    <p class="lede">เนื้อหา 3 แบบที่เราจะสื่อสารอย่างสม่ำเสมอในทุกช่องทาง</p>
-    <div class="cards three">
-      <div class="card"><h3>📦 Product</h3><p>แนะนำสินค้า จุดเด่น และวิธีใช้ ให้เห็นภาพชัด</p></div>
-      <div class="card"><h3>⭐ Review</h3><p>เสียงจริงและประสบการณ์จากผู้ใช้จริง</p></div>
-      <div class="card"><h3>🎁 Promotion</h3><p>โปรโมชันและกิจกรรมที่คุ้มค่าสำหรับคุณ</p></div>
-    </div>
-    <div class="note center">
-      <div style="color:var(--blue);margin-bottom:8px">ประโยคที่เราอยากให้จำ</div>
-      <div class="quote">“ดูแลรอยแผลเป็นอย่างยืดหยุ่น มั่นใจในผิวของคุณ”</div>
+    <div class="videos">
+      <div class="vid">
+        <video controls playsinline preload="metadata">
+          <source src="video1.mp4" type="video/mp4">
+          เบราว์เซอร์นี้เล่นวิดีโอไม่ได้
+        </video>
+      </div>
+      <div class="vid">
+        <video controls playsinline preload="metadata">
+          <source src="video2.mp4" type="video/mp4">
+          เบราว์เซอร์นี้เล่นวิดีโอไม่ได้
+        </video>
+      </div>
     </div>
   </div>
 </section>
