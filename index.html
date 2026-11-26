@@ -103,7 +103,7 @@ header{position:fixed;top:0;left:0;width:100%;height:82px;background:rgba(255,25
 .bar{display:flex;width:100%;height:58px;border-radius:18px;overflow:hidden;border:1px solid var(--line);margin-bottom:25px}
 .bar span{display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-weight:600}
 .s1{background:#2f8fd8}.s2{background:#13466e}.s3{background:#5db3ea}.s4{background:#1a9e5c}
-.cards.budget{grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:55px}
+.cards.budget{grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:55px}
 .budget .card{padding:28px 24px}
 .budget .card h3{font-size:21px;margin-bottom:6px}
 .budget .pct{font-size:40px;font-weight:800;color:var(--deep);line-height:1.1}
@@ -150,13 +150,13 @@ footer span{color:#8cc8f5}
 
 /* MOBILE */
 @media(max-width:1000px){
-  .cards.four,.cards.budget{grid-template-columns:repeat(2,1fr)}
+  .cards.four{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:850px){
   .home-grid{grid-template-columns:1fr;gap:45px}
   .home-photo{order:-1;max-width:340px}
   .home h1{font-size:55px}
-  .cards,.cards.three{grid-template-columns:1fr}
+  .cards,.cards.three,.cards.budget{grid-template-columns:1fr}
   .title{font-size:44px}
   .menu-grid{grid-template-columns:repeat(2,1fr)}
 }
@@ -372,16 +372,14 @@ footer span{color:#8cc8f5}
 
     <div class="section-label">สัดส่วนงบต่อเดือน<small>ตัวอย่างงบรวม 30,000 บาท/เดือน</small></div>
     <div class="bar" aria-label="สัดส่วนงบ">
-      <span class="s1" style="width:35%">35%</span>
-      <span class="s2" style="width:30%">30%</span>
-      <span class="s3" style="width:20%">20%</span>
-      <span class="s4" style="width:15%">15%</span>
+      <span class="s1" style="width:70%">70%</span>
+      <span class="s2" style="width:20%">20%</span>
+      <span class="s3" style="width:10%">10%</span>
     </div>
     <div class="cards budget">
-      <div class="card"><h3>🎬 คอนเทนต์และรีวิว</h3><div class="pct">35%</div><div class="amt">≈ 10,500 บาท</div><p>ถ่ายคลิปสาธิตวิธีตัดและติด ภาพก่อน–หลัง และจ้างครีเอเตอร์รายเล็กรีวิวจากการใช้จริง</p></div>
-      <div class="card"><h3>📣 โฆษณา TikTok / Meta</h3><div class="pct">30%</div><div class="amt">≈ 9,000 บาท</div><p>ดันคลิปที่คนดูและคลิกดีจากช่องทางออร์แกนิกก่อน แล้วค่อยเพิ่มงบ</p></div>
-      <div class="card"><h3>🛒 Shopee</h3><div class="pct">20%</div><div class="amt">≈ 6,000 บาท</div><p>โฆษณาในร้าน คูปอง และโปรโมชันช่วงแคมเปญใหญ่ เพื่อให้คนที่ค้นหาเจอเราและตัดสินใจเร็วขึ้น</p></div>
-      <div class="card"><h3>💬 LINE และตัวอย่างสินค้า</h3><div class="pct">15%</div><div class="amt">≈ 4,500 บาท</div><p>ส่งสินค้าให้ผู้ใช้จริงลองและรีวิว พร้อมดูแลลูกค้าผ่าน LINE Official</p></div>
+      <div class="card"><h3>🎬 คอนเทนต์และรีวิว</h3><div class="pct">70%</div><div class="amt">≈ 21,000 บาท</div><p>ถ่ายคลิปสาธิตวิธีตัดและติด ภาพก่อน–หลัง และรีวิวจากผู้ใช้จริง เพื่อให้ลูกค้าเห็นภาพก่อนตัดสินใจซื้อ</p></div>
+      <div class="card"><h3>📣 โฆษณา</h3><div class="pct">20%</div><div class="amt">≈ 6,000 บาท</div><p>ดันคลิปที่คนดูและคลิกดีให้เข้าถึงลูกค้าใหม่ ทดลองหลายครีเอทีฟ แล้วเพิ่มงบให้คลิปที่ได้ผล</p></div>
+      <div class="card"><h3>🎁 ตัวอย่างสินค้า</h3><div class="pct">10%</div><div class="amt">≈ 3,000 บาท</div><p>ส่งตัวอย่างให้ผู้ใช้จริงลองใช้และรีวิว เพื่อสร้างความน่าเชื่อถือและเป็นวัตถุดิบสำหรับทำคอนเทนต์</p></div>
     </div>
 
     <div class="section-label">ไทม์ไลน์ 3 ระยะ<small>รวม 12 สัปดาห์</small></div>
