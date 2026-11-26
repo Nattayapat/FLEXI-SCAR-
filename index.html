@@ -125,6 +125,16 @@ header{position:fixed;top:0;left:0;width:100%;height:82px;background:rgba(255,25
 .vid video{display:block;width:100%;max-height:80vh;background:#000}
 @media(max-width:850px){.videos{grid-template-columns:1fr}}
 
+/* COMPARE */
+.compare{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
+.cmp{margin:0}
+.cmp-img{background:var(--sky);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(19,70,110,.07);aspect-ratio:1/1}
+.cmp.ours .cmp-img{border:2px solid var(--blue)}
+.cmp-img img{display:block;width:100%;height:100%;object-fit:cover}
+.cmp figcaption{margin-top:14px;text-align:center;color:var(--deep);font-size:20px;font-weight:600}
+.cmp figcaption .tag{display:block;width:fit-content;margin:0 auto 8px}
+@media(max-width:550px){.compare{gap:12px}.cmp figcaption{font-size:16px}}
+
 /* FOOTER */
 footer{background:var(--deep);color:#fff;text-align:center;padding:35px 20px}
 footer span{color:#8cc8f5}
@@ -225,6 +235,19 @@ footer span{color:#8cc8f5}
     <h1 class="title">จากสินค้าต้นแบบ สู่แบรนด์ที่ดีกว่าเดิม</h1>
     <div class="subtitle"><b>01</b>BUSINESS GOAL</div>
     <p class="lede"><strong>เราเก็บสิ่งที่ดีของแผ่นม้วนไว้ แล้วแก้สิ่งที่ลูกค้าติดขัด</strong> เริ่มจากสินค้าต้นแบบ เรียนรู้ว่าตรงไหนยังไม่ดีพอ แล้วพัฒนาเป็นแบรนด์ของเราเอง</p>
+    <div class="section-label">เปรียบเทียบสินค้า<small>คู่แข่ง และ FLEXI SCAR ของเรา</small></div>
+    <div class="compare">
+      <figure class="cmp">
+        <div class="cmp-img"><img src="compare-competitor.jpg" alt="สินค้าคู่แข่ง"></div>
+        <figcaption><span class="tag">คู่แข่ง</span>สินค้าคู่แข่ง</figcaption>
+      </figure>
+      <figure class="cmp ours">
+        <div class="cmp-img"><img src="compare-ours.jpg" alt="FLEXI SCAR ของเรา"></div>
+        <figcaption><span class="tag g">ของเรา</span>FLEXI SCAR</figcaption>
+      </figure>
+    </div>
+
+    <div class="section-label">จุดสำคัญของแบรนด์</div>
     <div class="cards">
       <div class="card"><h3>🎯 จุดแข็งที่เราเก็บไว้</h3><p>แผ่นม้วนที่ตัดได้ตามรูปทรงแผล พอดีกับรอยแผลของแต่ละคน</p></div>
       <div class="card"><h3>🔍 สิ่งที่ต้นแบบสอนเรา</h3><p>การยึดเกาะยังไม่แน่นพอ และการตัดแผ่นเองยังไม่สะดวก</p></div>
