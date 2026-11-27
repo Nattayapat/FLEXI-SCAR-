@@ -517,7 +517,7 @@ footer span{color:#8cc8f5}
     <div class="back" onclick="showPage('home')">← กลับหน้าหลัก</div>
     <h1 class="title">สรุป</h1>
     <div class="subtitle g"><b>10</b>SUMMARY</div>
-    <div class="sum-img"><img src="summary.jpg" alt="สรุป FLEXI SCAR"></div>
+    <div class="sum-img"><img id="sumImg" src="summary.jpg" alt="สรุป FLEXI SCAR"></div>
   </div>
 </section>
 
@@ -582,21 +582,26 @@ function createSnow(){
 setInterval(createSnow,350);
 for(let i=0;i<25;i++){setTimeout(createSnow,i*120)}
 
-/* หารูปธุรกิจเราจากชื่อไฟล์ที่ขึ้นต้นด้วย file_0000000069ac8207 ใน repo (ถ้าเปลี่ยนชื่อเป็น compare-ours.jpg แล้ว ส่วนนี้ไม่ทำงาน) */
-window.addEventListener('load',function(){
-  const img=document.getElementById('oursImg');
+/* หารูปที่อัปโหลดใน GitHub จากชื่อไฟล์ที่ขึ้นต้นด้วย prefix (ถ้าเปลี่ยนชื่อไฟล์ตามที่ตั้งไว้แล้ว ส่วนนี้ไม่ทำงาน) */
+function findImageByPrefix(id,prefix){
+  const img=document.getElementById(id);
   if(!img)return;
-  img.addEventListener('error',function(){
+  let list=null;
+  function fix(){
     if(img.dataset.tried)return;
     img.dataset.tried='1';
-    fetch('https://api.github.com/repos/tarmingx2/FLEXI-SCAR-/contents/')
-      .then(function(r){return r.json()})
-      .then(function(list){
-        const f=list.find(function(x){return x.name&&x.name.indexOf('file_0000000069ac8207')===0});
+    (list||(list=fetch('https://api.github.com/repos/tarmingx2/FLEXI-SCAR-/contents/').then(function(r){return r.json()})))
+      .then(function(items){
+        const f=items.find(function(x){return x.name&&x.name.indexOf(prefix)===0});
         if(f){img.src=encodeURI(f.name)}
       }).catch(function(){});
-  });
-  if(img.complete&&img.naturalWidth===0){img.dispatchEvent(new Event('error'))}
+  }
+  img.addEventListener('error',fix);
+  if(img.complete&&img.naturalWidth===0){fix()}
+}
+window.addEventListener('load',function(){
+  findImageByPrefix('oursImg','file_0000000069ac8207');
+  findImageByPrefix('sumImg','file_00000000a9448211');
 });
 </script>
 </body>
