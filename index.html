@@ -153,6 +153,10 @@ header{position:fixed;top:0;left:0;width:100%;height:82px;background:rgba(255,25
   .cmp-table tr.grp td{font-size:14px;padding:8px 9px;letter-spacing:.5px}
 }
 
+/* SUMMARY */
+.sum-img{background:var(--sky);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(19,70,110,.1)}
+.sum-img img{display:block;width:100%;height:auto}
+
 /* FOOTER */
 footer{background:var(--deep);color:#fff;text-align:center;padding:35px 20px}
 footer span{color:#8cc8f5}
@@ -507,6 +511,16 @@ footer span{color:#8cc8f5}
   </div>
 </section>
 
+<!-- 10 SUMMARY -->
+<section id="summary" class="page">
+  <div class="container">
+    <div class="back" onclick="showPage('home')">← กลับหน้าหลัก</div>
+    <h1 class="title">สรุป</h1>
+    <div class="subtitle g"><b>10</b>SUMMARY</div>
+    <div class="sum-img"><img src="summary.jpg" alt="สรุป FLEXI SCAR"></div>
+  </div>
+</section>
+
 <footer><span>FLEXI SCAR</span> · ดูแลรอยแผลเป็นอย่างยืดหยุ่น · © 2026</footer>
 
 <!-- MENU -->
@@ -527,12 +541,13 @@ footer span{color:#8cc8f5}
       <button class="menu-item g" onclick="showPage('content')"><span class="mi">🏷️</span><span class="mn">07</span><span class="me">Content &amp; Message</span><span class="mt">เนื้อหาและข้อความหลัก</span></button>
       <button class="menu-item g" onclick="showPage('budget')"><span class="mi">⏱️</span><span class="mn">08</span><span class="me">Budget &amp; Timeline</span><span class="mt">งบและช่วงเวลาแคมเปญ</span></button>
       <button class="menu-item g" onclick="showPage('kpi')"><span class="mi">📊</span><span class="mn">09</span><span class="me">KPI &amp; Measurement</span><span class="mt">ตัวเลขที่ใช้วัดผล</span></button>
+      <button class="menu-item g" onclick="showPage('summary')"><span class="mi">📋</span><span class="mn">10</span><span class="me">Summary</span><span class="mt">สรุป</span></button>
     </div>
   </div>
 </div>
 
 <script>
-const validPages=['home','goal','audience','insight','value','journey','channels','content','budget','kpi'];
+const validPages=['home','goal','audience','insight','value','journey','channels','content','budget','kpi','summary'];
 
 function showPage(pageId){
   document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
