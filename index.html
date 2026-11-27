@@ -260,11 +260,11 @@ footer span{color:#8cc8f5}
     <div class="section-label">เปรียบเทียบสินค้า<small>คู่แข่ง และ FLEXI SCAR ของเรา</small></div>
     <div class="compare">
       <figure class="cmp">
-        <div class="cmp-img"><img src="compare-competitor.jpg" alt="สินค้าคู่แข่ง"></div>
+        <div class="cmp-img"><img src="1795744723622.jpg" alt="สินค้าคู่แข่ง"></div>
         <figcaption><span class="tag">คู่แข่ง</span>สินค้าคู่แข่ง</figcaption>
       </figure>
       <figure class="cmp ours">
-        <div class="cmp-img"><img src="compare-ours.jpg" alt="FLEXI SCAR ของเรา"></div>
+        <div class="cmp-img"><img id="oursImg" src="compare-ours.jpg" alt="FLEXI SCAR ของเรา"></div>
         <figcaption><span class="tag g">ของเรา</span>FLEXI SCAR</figcaption>
       </figure>
     </div>
@@ -581,6 +581,23 @@ function createSnow(){
 }
 setInterval(createSnow,350);
 for(let i=0;i<25;i++){setTimeout(createSnow,i*120)}
+
+/* หารูปธุรกิจเราจากชื่อไฟล์ที่ขึ้นต้นด้วย file_0000000069ac8207 ใน repo (ถ้าเปลี่ยนชื่อเป็น compare-ours.jpg แล้ว ส่วนนี้ไม่ทำงาน) */
+window.addEventListener('load',function(){
+  const img=document.getElementById('oursImg');
+  if(!img)return;
+  img.addEventListener('error',function(){
+    if(img.dataset.tried)return;
+    img.dataset.tried='1';
+    fetch('https://api.github.com/repos/tarmingx2/FLEXI-SCAR-/contents/')
+      .then(function(r){return r.json()})
+      .then(function(list){
+        const f=list.find(function(x){return x.name&&x.name.indexOf('file_0000000069ac8207')===0});
+        if(f){img.src=encodeURI(f.name)}
+      }).catch(function(){});
+  });
+  if(img.complete&&img.naturalWidth===0){img.dispatchEvent(new Event('error'))}
+});
 </script>
 </body>
 </html>
